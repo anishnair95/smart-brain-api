@@ -1,0 +1,21 @@
+{
+  "name": "smart-brain-api",
+  "version": "1.0.0",
+  "description": "Server for smart brain app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./Server.js  "
+  },
+  "author": "Anish",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.19.2",
+    "clarifai": "^2.9.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "knex": "^1.0.4",
+    "pg": "^8.7.3"
+  }
+}

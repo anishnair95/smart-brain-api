@@ -29,52 +29,17 @@ const db = knex({
 });
 
 
-// db.select('*').from('trial')  //this sends a promise
-// .then((data)=>{
-//     console.log(data);
-// })
-// .catch((err)=>{
-//     console.log(err);
-// }); 
 
-
-// const database = {
-//     users: [
-//         {
-//             id: '123',
-//             name: 'John',
-//             email: 'john@gmail.com',
-//             password: 'cookies',
-//             entries: 0,
-//             joined: new Date()
-//         },
-//         {
-//             id: '124',
-//             name: 'Sally',
-//             email: 'sally@gmail.com',
-//             password: 'bananas',
-//             entries: 0,
-//             joined: new Date()
-//         },
-//     ],
-//     login: {
-//         id: '987',
-//         hash: '',
-//         email: 'john@gmail.com'
-//     }
-// }
-
-
-// app.use(bodyParser.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
 
-    db.select("*").from("users")
+    /*db.select("*").from("users")
     .then(users=>res.json(users))
-    .catch(err=>res.status(400).json("Error occurred!"))
+    .catch(err=>res.status(400).json("Error occurred!"))*/
+    res.send('It is working');
 })
 
 
@@ -94,9 +59,9 @@ app.put('/image', (req,res)=>{controller.handleImage(req,res,db)})
 //face recognition API
 app.post('/imageUrl',(req,res)=>{controller.handleApiCall(req,res,clarifaiApp)})
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 3000, () => {
 
-    console.log(`Server listening at port:http://localhost:${port}/`);
+    console.log(`Server listening at port:http://localhost:${process.env.PORT}/`);
 })
 
 

@@ -19,11 +19,8 @@ console.log(Clarifai);
 const db = knex({
     client: 'pg',
     connection: {
-        host: '127.0.0.1', //this will change later based at which port we will host
-        port: 5432,
-        user: 'postgres',
-        password: 'admin',
-        database: 'smart-brain',
+        connectionString:process.env.process.env.DATABASE_URL,
+        ssl:true
 
     }
 });

@@ -14,7 +14,7 @@ const clarifaiApp = new Clarifai.App({
     apiKey: 'd723c9a09000425b9fd0e16c885c8871'
   });
   
-console.log(Clarifai);
+// console.log(Clarifai);
 
 const db = knex({
     client: 'pg',

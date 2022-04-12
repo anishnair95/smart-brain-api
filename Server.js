@@ -11,7 +11,7 @@ const controller=require('./controllers/register')
 const Clarifai = require('clarifai');
 
 const clarifaiApp = new Clarifai.App({
-    apiKey: 'd723c9a09000425b9fd0e16c885c8871'
+    apiKey: process.env.API_CLARIFAI_KEY
   });
   
 // console.log(Clarifai);
